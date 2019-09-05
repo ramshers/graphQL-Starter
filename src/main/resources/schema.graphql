@@ -1,0 +1,27 @@
+schema {
+ query: Query
+}
+
+type Query {
+ allCities: [City]
+ city(name: String): City
+ state(name: String): State 
+}
+
+type City {
+	name: String
+	population: String
+	state: State
+}
+
+type State {
+	name: String
+	population: String
+	country: Country
+	cities : [City]
+} 
+
+type Country {
+	name: String
+	population: String
+}
